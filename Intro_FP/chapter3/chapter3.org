@@ -1,0 +1,23 @@
+* Exercise for Chapter 3
+1. 
+    [Char]
+    (Char, Char, Char)
+    [(Bool, Char)]
+    ([Bool], [Char])
+    [[a] ->[a]]
+2.
+   bools = [True, True]
+   nums = [[1,2],[3,4]]
+   add x y z = x + y + z
+   copy x = (x, x)
+   apply f x = f(x)
+3.
+   second::[a] -> a
+   swap::(a, b) -> (b, a)
+   pair:: a -> b -> (a, b)
+   double:: Num a => a -> a
+   palindrome:: Eq a => [a] -> Bool
+   twice:: (a -> a) -> a -> a
+   
+
+

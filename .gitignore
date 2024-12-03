@@ -23,3 +23,8 @@ cabal.project.local~
 .ghc.environment.*
 
 *.swp
+*.pdf
+*~
+.DS_Store
+scip/book
+Intro_FP/PGP-Haskell
