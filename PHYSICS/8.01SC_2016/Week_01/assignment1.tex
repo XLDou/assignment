@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage{siunitx}
+
+\title{Assignment 1}
+\begin{document}
+
+\section{Car and Bicycle Rider}
+\subsection{a)}
+By the fact that $v_c(t) = \int_{t_0}^t a_c(s) ds + v_0$, we have
+\begin{align}
+  v_c(t) = \begin{cases}
+    v_0 & 0 \leq t \leq t_1 \\
+    v_0 - \frac{c}{2}(t - t_1)^2 & t1 \leq t \leq t2\\
+    0 & t \geq t_2.
+  \end{cases} 
+\end{align}
+Solving $v_c(t_2) = 0$, we get $t_2 = t_1 + \left(2v_0 / c\right)^{1/2}$.
+
+When $t \leq t_1$, it's obvious $x_c(t) = v_0 t$. When $t_1 \leq t \leq t_2$,
+we have the following
+\begin{equation}
+  x_c(t) = x_c(t_1) + \int_{t_1}^{t}v_c(s) ds = v_0t - \frac{c}{6} (t - t_t)^3.
+\end{equation}
+After $t_2$ the car stays at $x_c(t_2) = v_0t_2 - \frac{c}{6}(t_2 - t_1)^3=v_0 t_1
++\frac{2v_0}{3}\sqrt{\frac{2v_0}{c}}$.
+
+Then we have
+\begin{align}
+  x_c(t) = \begin{cases}
+    v_0 t & t \leq t_1 \\
+    v_0 t - \frac{c}{6}(t - t_1)^3 & t_1 \leq t \leq t_2 \\
+    v_0t_1 + \frac{2v_0}{3}\sqrt{\frac{2v_0}{c}} & t \geq t_2\\
+  \end{cases}
+\end{align}
+
+\subsection{b}
+Solvint the following equation, for notational simplicity, let $x_b = x_b(0)$.
+\begin{align*}
+  x_b + v_b t_2  &= v_0 t_1 + \frac{2v_0}{3}\sqrt{\frac{2v_0}{c}}\\
+  x_b + v_b(t_1 + \sqrt{2v_0/c}) &= \cdots\\
+  v_b &= \frac{-x_b + v_0t_1 + \frac{2v_0}{3}\sqrt{\frac{2v_0}{c}}}{t_1 + \sqrt{2v_0/c}} \\
+                 &= (17 + 12 \times 1 + 16) / (1 + 2) = 45 / 3 = 15
+\end{align*}
+
+
+\section{Elevator Trip}
+\subsection{a}
+\begin{align}
+  v(t) = \begin{cases}
+    at & 0 \leq t \leq T\\
+    aT & T\leq t \leq 5T\\
+    aT - a (t - 5T) = 6aT - at & 5T \leq t \leq 6T. 
+  \end{cases}
+\end{align}
+\subsection{b}
+Integrating over $v$ we have the height function $y(t)$ as follows
+\begin{align}
+  y(t) = \begin{cases}
+    \frac{t^2}{2a} & 0 \leq t \leq T\\
+    aTt - \frac{aT^2}{2} & T \leq t \leq 5T\\
+    -13aT^2 + 6aTt - \frac{a}{2}t^2 & 5T \leq t \leq 6T.
+  \end{cases}
+\end{align}
+By solving $y(6T) = h$, we get
+\begin{align}
+  a = h / 5T^2.
+\end{align}
+
+
+\section{Rocket Launch}
+The rocket reaches its maximum height when the velocity becaues zero. We let the
+time $t_{1}$ denotes the maximum height time. We have
+\begin{align}
+  v_r(t) = 
+    At - \frac{Bt^2}{2} \quad t \leq t_1.
+\end{align}
+Then we have
+\[t_1  = 2A / B.\]
+We also have the height of rocket,
+\begin{equation}
+  y_r(t) = \frac{At^2}{2} - \frac{Bt^3}{6} \quad t \leq t_1.
+\end{equation}
+We ball height has the following
+\begin{equation}
+  y_b(t) = h - \frac{gt^2}{2} \quad t \leq t_1.
+\end{equation}
+Solving $y_b(t_1) = y_r(t_1)$ and plug in $t_1$, we have
+\begin{align}
+  h = \frac{1}{B^2}\left(2g\cdot A^2 + \frac{2}{3}A^3\right).
+\end{align}
+
+
+\section{Throw and Catch}
+The height difference of the ball is
+\begin{equation}
+  \Delta h_b(t) = v_0\cdot \sin(\theta)t - \frac{g}{2}t^2.
+\end{equation}
+By solving $\Delta h = 0$ for a non-trival solution, we get the catch time
+\[t_1 = 2\sin(\theta)v_0 / g.\]
+The ball x-xias has the following equation
+\[x_b(t) = \cos(\theta)v_0 t.\]
+The person x-xias has
+\[x_p(t) = d + \frac{B}{6}t^3.\]
+Solving $x_b(t_1) = x_p(t_1)$, we get
+\[B = \frac{3g^3}{4\sin^3(\theta)v_o^3}\left( \frac{2\sin\theta\cos\theta v_0^2}{g} - d\right).\]
+
+\section{Vertical Collision}
+\subsection{a}
+In general the height of balls after throw has the following:
+\[h_b(\Delta t) = v_0 \Delta t - \frac{g}{2}\Delta t^2.\]
+The the two times of $h_b(t) = h$ as the roots have
+\begin{equation}\label{eq:sum_traval}
+ t_ 1 + t_2 = 2v_0 / g.
+\end{equation}
+Is obvious that $t_i$ is the travel time of $i$-th ball. We know that
+\begin{align}
+  t_1 = t_h \\
+  t_2  + 4 = t_h 
+\end{align}
+Combine with \eqref{eq:sum_traval}, we get
+\[2t_h + 4\si{s} = 2v_0 / g. \]
+\subsection{b}
+Solving $v_0 t_h - \frac{g}{2}t_h^2 = h$, we can get $v_0$
+
+\end{document}

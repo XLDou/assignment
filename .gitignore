@@ -23,8 +23,29 @@ cabal.project.local~
 .ghc.environment.*
 
 *.swp
-*.pdf
 *~
 .DS_Store
 scip/book
 Intro_FP/PGP-Haskell
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.pdf
+*.pptx
+
+\#*\#
+.\#*
+
+**/auto/
+*.synctex.gz
+CS/scip/book/
